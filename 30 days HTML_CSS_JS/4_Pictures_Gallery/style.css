@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300;1,400&family=Roboto:wght@400;500&display=swap');
+
+:root {
+    --white-color: #fff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+.grid {
+    width: 1200px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -10px;
+    margin-right: -10px;
+}
+
+.col-4 {
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 23%;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+    font-family: 'Poppins';
+}
+
+body {
+    height: 100vh;
+    background-color: #ccc;
+}
+
+.wrapper {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+
+.list {
+    margin-top: 20px;
+}
+
+.image {
+    border-radius: 4px;
+    overflow: hidden;
+    user-select: none;
+}
+
+.image:hover img {
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+img {
+    width: 100%;
+    height: 100%; 
+    object-fit: cover;
+    object-position: center;
+    transition: 0.5s;
+}
+
+/* Modal */
+
+.gallery {
+    position: fixed;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(0.8);
+    transition: 0.5s;
+}
+
+.gallery.open {
+    opacity: 1;
+    pointer-events: auto;
+    transform: scale(1);
+}
+
+.gallery__inner {
+    width: 70%;
+    height: 70%;
+}
+
+.gallery__close,
+.gallery__control-pvev,
+.gallery__control-next {
+    cursor: pointer;
+    color: #fff;
+    position: fixed;
+    transition: 0.3s;
+}
+
+.gallery__close:hover,
+.gallery__control-pvev:hover,
+.gallery__control-next:hover {
+    transform: scale(1.2);
+    color: rgb(216, 63, 63);
+}
+
+.gallery__close {
+    top: 15px;
+    right: 36px;
+    font-size: 3.5rem;
+}
+
+.gallery__control-pvev {
+    left: 16px;
+    font-size: 5.6rem;
+}
+
+.gallery__control-pvev.hidden {
+    display: none;
+}
+
+.gallery__control-next {
+    right: 16px;
+    font-size: 5.6rem;
+}
+
+

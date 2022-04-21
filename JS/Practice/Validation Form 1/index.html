@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="main">
+
+        <form method="post" action="" class="form" id="form-1">
+            <h3 class="heading">Register Form</h3>
+            <p class="desc">Hoang Sa, Truong Sa are our territory!</p>
+
+            <div class="spacer"></div>
+
+            <!-- Fullname -->
+            <div class="form-group">
+                <label for="fullname" class="form-label">Fullname</label>
+                <input id="fullname" name="fullname" type="text" placeholder=" E.g: Nguyễn Hoàng" class="form-control">
+                <span class="form-message"></span>
+            </div>
+
+            <!-- Email -->
+            <div class="form-group">
+                <label for="email" class="form-label">Email</label>
+                <input id="email" name="email" type="text" placeholder=" E.g: abc123@gmail.com" class="form-control">
+                <span class="form-message"></span>
+            </div>
+
+            <!-- Passwork -->
+            <div class="form-group">
+                <label for="password" class="form-label">Password</label>
+                <input id="password" name="password" type="password" placeholder=" E.g: hoangoccho123" class="form-control">
+                <span class="form-message"></span>
+            </div>
+
+            <!-- Type pwd again -->
+            <div class="form-group">
+                <label for="password_confirmation" class="form-label">Repeat Password</label>
+                <input id="password_confirmation" name="password_confirmation" type="password" placeholder=" E.g: hoangoccho123" class="form-control">
+                <span class="form-message"></span>
+            </div>
+
+            <!-- ************************* -->
+            <!-- RADIO-GENDER -->
+            <!-- <div class="form-group">
+                <label for="gender" class="form-label">Gender</label>
+                <div class="gender_confirmation">
+                    <input name="gender" type="radio" class="form-control" value="male"> 
+                    <span>Male</span>
+                </div>
+                <div class="gender_confirmation">
+                    <input name="gender" type="radio" class="form-control" value="female"> 
+                    <span>Female</span>
+                </div>
+                <div class="gender_confirmation">
+                    <input name="gender" type="radio" class="form-control" value="other"> 
+                    <span>Other</span>
+                </div>
+                <span class="form-message"></span>
+            </div> -->
+
+            <!-- SELECT-UNIVERSITY -->
+            <div class="form-group">
+                <label for="university" class="form-label">University</label>
+                <select id="university" name="university" class="form-control">
+                    <option value="">Select University</option>
+                    <option value="Aalto">Aalto</option>
+                    <option value="VAMK">VAMK</option>
+                    <option value="JAMK">JAMK</option>
+                    <option value="XAMK">XAMK</option>
+                    <option value="SAMK">SAMK</option>
+                </select>
+                <span class="form-message"></span>
+            </div>
+
+            <!-- CHECKBOX-HOBBIES -->
+            <div class="form-group">
+                <label for="hobby" class="form-label">Hobbies</label>
+                <div class="hobby_confirmation">
+                    <input name="hobbies" type="checkbox" class="form-control" value="football"> 
+                    <span>Football</span>
+                </div>
+                <div class="hobby_confirmation">
+                    <input name="hobbies" type="checkbox" class="form-control" value="e-Sports"> 
+                    <span>E-Sports</span>
+                </div>
+                <div class="hobby_confirmation">
+                    <input name="hobbies" type="checkbox" class="form-control" value="girls"> 
+                    <span>Girls</span>
+                </div>
+                <span class="form-message"></span>
+            </div>
+
+            <!-- FILE-AVATAR -->
+            <div class="form-group">
+                <label for="avatar" class="form-label">Avatar</label>
+                <input id="avatar" name="avatar" type="file" class="form-control">
+                <span class="form-message"></span>
+            </div>
+
+            <button class="submit">
+                <p class="submit__text">Register</p>
+            </button>
+        </form>
+
+    </div>
+
+    <script src="./app.js"></script>
+    
+    <script>
+        
+        // Truyền chỉ số
+        Validator({
+            form: '#form-1',
+            message: '.form-message',
+            formGroupSelector: '.form-group',
+            rules: [
+                // Chạy các hàm chứa rule, để return Object
+                // Validator.isRequired('#fullname', 'Please, fill in your full name'),
+
+                // Validator.isRequired('#email'),
+                // Validator.isEmail('#email'),
+
+                // Validator.isRequired('#password'),
+                // Validator.isPassword('#password', 6),
+
+                // Validator.isRequired('#password_confirmation'),
+                // Validator.isConfirmed('#password_confirmation', function() {
+                //     return document.querySelector('#form-1 #password').value;
+                // }, 'Passwords are not the same!'),
+
+                // Validator.isRequired('input[name="gender"]'),
+
+                // Validator.isRequired('#university'),
+
+                // Validator.isRequired('input[name="hobbies"]'),
+
+                Validator.isRequired('#avatar'),
+            ],
+            onsubmit: function(data) {
+                console.log(data);
+            }
+        });
+
+    </script>
+</body>
+</html>

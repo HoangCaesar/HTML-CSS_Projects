@@ -1,0 +1,157 @@
+* {
+    box-sizing: inherit;
+    margin: 0;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+    line-height: 1.6rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+#toast {
+    position: fixed;
+    top: 32px;
+    right: 32px;
+    z-index: 999;
+}
+
+.toast {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 400px;
+    max-width: 450px;
+    background-color: #fff;
+    border-radius: 2px;
+    border-left: 4px solid ;
+    box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.08);
+    transition: all linear  0.3s;
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(calc(100% +  32px));
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+    }
+}
+
+.toast + .toast {
+    margin-top: 24px;
+}
+
+.toast--success {
+    border-color: green;
+}
+
+.toast--success .toast__icon {
+    color: green;
+}
+
+.toast--info {
+    border-color: blue;
+}
+
+.toast--info .toast__icon {
+    color: blue;
+}
+
+.toast--warning {
+    border-color: yellow;
+}
+
+.toast--warning .toast__icon {
+    color: yellow;
+}
+
+.toast--error {
+    border-color: red;
+}
+
+.toast--error .toast__icon {
+    color: red;
+}
+
+.toast__close,
+.toast__icon {
+    padding: 0 12px;
+}
+
+.toast__icon {
+    font-size: 22px;
+}
+
+.toast__body {
+    flex: 1;
+    padding: 8px;
+}
+
+.toast__title {
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+.toast__message {
+    margin-top: 8px;
+    font-size: 1.2rem;
+
+}
+
+.toast__close {
+    font-size: 20px;
+    opacity: 0.4;
+    cursor: pointer;
+}
+
+/* ******************************************** */
+
+#btn {
+    position: fixed;
+    top: 200px;
+    right: 20%;
+}
+
+.btn {
+    display: inline-block;
+    text-decoration: none;
+    /* background-color: #000; */
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+.btn--success {
+    background-color: green;
+}
+
+.btn--info {
+    background-color: blue;
+}
+
+.btn--warning {
+    background-color: yellow;
+}
+
+.btn--error {
+    background-color: red;
+}
+
+.btn__text {
+    padding: 12px 24px;
+    font-size: 1.5rem;
+    line-height: 1.6rem;
+    min-width: 160px;
+    color: #fff;
+    font-weight: 300;
+    text-align: center;
+}

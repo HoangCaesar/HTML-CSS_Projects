@@ -1,0 +1,176 @@
+* {
+    box-sizing: inherit;
+}
+
+:root {
+    --white-color: #fff;
+    --black-color: #000;
+    --text-color: #555555;
+    --heading-color: #727475;
+    --detail-text-color: #9a9a9a;
+    --primary-color: #f3a46b;
+    --border-color: #f1f1f1;
+
+    /* Height/Width */
+    --header-height: 78px;
+}
+
+html {
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    font-size: 62.5%;
+    line-height: 1.6rem;
+}
+
+body {
+    margin: 0;
+}
+
+/* Grid system */
+
+.grid {
+    width: 1200px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.grid__full-width {
+    width: 100%;
+}
+
+.grid__row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -5px;
+    margin-right: -5px;
+}
+
+.grid__column-2 {
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 16.6667%;
+}
+
+.grid__column-3 {
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 25%;
+}
+
+.grid__column-4 {
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 33.3333%;
+}
+
+.grid__column-6 {
+    padding: 15px 15px;
+    width: 50%;
+}
+
+
+.grid__column-8 {
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 66.6667%;
+}
+
+.grid__column-10 {
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 83.3333%;
+}
+
+/* Btn */
+
+.btn {
+    padding: 7px 23px;
+    font-size: 1.6rem;
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    border-radius: 30px;
+    text-decoration: none;
+}
+
+/* Animation */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0.6;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@import "compass/css3";
+
+@keyframes float {
+    from {
+      transform: rotate(0deg) translate3d(2px, 0, 0) rotate(-2deg);
+    }
+  
+    to {
+      transform: rotate(-360deg) translate3d(2px, 0, 0) rotate(358deg);
+    }
+}
+
+@keyframes fadeOutLeft {
+    0%   {opacity: 1; transform: rotate(0deg) translate3d(0px, 0, 0);}
+    50%  {opacity: 0.2; transform: rotate(0deg) translate3d(-150px, 0, 0)}
+    100% {opacity: 1; transform: rotate(0deg) translate3d(0px, 0, 0)}
+}
+
+@keyframes fadeOutRight {
+    0%   {opacity: 1; transform: rotate(0deg) translate3d(0px, 0, 0);}
+    50%  {opacity: 0.2; transform: rotate(0deg) translate3d(150px, 0, 0)}
+    100% {opacity: 1; transform: rotate(0deg) translate3d(0px, 0, 0)}
+}
+
+@keyframes fadeOutUp {
+    0% {opacity: 0; transform: translateY(40px);}
+    100% {opacity: 1; transform: translateY(0px);}
+}
+
+@keyframes flip {
+    from{
+        opacity: 0;
+        transform: rotateX(90deg);
+      }
+       to{
+        opacity: 1;
+         transform: rotateX(0deg);
+      }
+}
+
+/* Text Detail */
+
+.text-detail {
+    font-size: 1.4rem;
+    color: var(--detail-text-color);
+    letter-spacing: 2px;
+    line-height: 2.7rem;
+    margin: 0;
+}
+
+.text-heading {
+    font-size: 3.4rem;
+    font-weight: 800;
+    color: var(--text-color);
+    line-height: 3.0rem;
+}
+
+/* Underline pseudo class */
+
+u::after {
+    position: absolute;
+    z-index: -1;
+    content: "";
+    width: 100%;
+    height: 5px;
+    background-color: #f3a46b;
+}
+
+/* Unpadding */
+

@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300;1,400&family=Roboto:wght@400;500&display=swap');
+:root {
+    --primary-color: #f2726a;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%; 
+    font-family: 'Poppins';
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(45deg, #00853e, #50c878);
+}
+
+.main {
+    display: flex;
+}
+
+.card {
+    margin: 30px;
+    text-align: center;
+    width: 300px;
+    height: 400px;
+    background-color: #242628;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.card__img {
+    height: 120px;
+    width: 120px;
+    border: 4px solid var(--primary-color);
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto;
+    transform: translateY(25px);
+    transition: 0.5s;
+}
+
+img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    object-position: center;
+}
+
+.card__name {
+    margin-top: 35px;
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+.card__desc {
+    font-size: 1.6rem;
+    color: var(--primary-color);
+}
+
+.card__social {
+    margin: 25px 0 40px;
+}
+
+.card__social a {
+    display: inline-block;
+    margin: 0 20px;
+    font-size: 18px;
+    color: #fff;
+    transition: 0.5s;
+}
+
+.card__social a:hover {
+    cursor: pointer;
+    color: var(--primary-color);
+}
+
+.card__btn {
+    padding: 10px 20px;
+    background-color: #242628;
+    border: 1px solid var(--primary-color);
+    border-radius: inherit;
+    transition: 0.3s;
+}
+
+.card .card__btn:hover {
+    cursor: pointer;
+    background-color: var(--primary-color);
+}
+
+.card__btn p {
+    font-size: 1.4rem;
+    color: #fff;
+}
+
+/* ***** Zoom Picture ***** */
+
+.card__img:hover {
+    transform: unset;
+    height: 100%;
+    width: 100%;
+    border-radius: unset;
+    border: none;
+}

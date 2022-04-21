@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="main">
+
+        <form method="post" action="" class="form" id="register-form">
+            <h3 class="heading">Register Form</h3>
+            <p class="desc">Hoang Sa, Truong Sa are our territory!</p>
+
+            <div class="spacer"></div>
+
+            <!-- Fullname -->
+            <div class="form-group">
+                <label for="fullname" class="form-label">Fullname</label>
+                <input id="fullname" name="fullname" rules="required" type="text" placeholder=" E.g: Nguyễn Hoàng" class="form-control">
+                <span class="form-message"></span>
+            </div>
+
+            <!-- Email -->
+            <div class="form-group">
+                <label for="email" class="form-label">Email</label>
+                <input id="email" name="email" rules="required|email" type="text" placeholder=" E.g: abc123@gmail.com" class="form-control">
+                <span class="form-message"></span>
+            </div>
+
+            <!-- Passwork -->
+            <div class="form-group">
+                <label for="password" class="form-label">Password</label>
+                <input id="password" name="password" rules="required|min:6" type="password" placeholder="Enter your password" class="form-control">
+                <span class="form-message"></span>
+            </div>
+
+            <button class="submit">
+                <p class="submit__text">Register</p>
+            </button>
+        </form>
+
+    </div>
+
+    <script src="./validator.js"></script>
+    
+    <script>
+        var form = new Validator('#register-form');
+
+        // Submit = Ajax
+        form.onSubmit = function(data) {
+            console.log(data);
+        }
+
+    </script>
+</body>
+</html>

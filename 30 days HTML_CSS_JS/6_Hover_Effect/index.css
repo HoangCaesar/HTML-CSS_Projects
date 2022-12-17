@@ -1,4 +1,4 @@
-:root {
+	:root {
     --bg-color: rgb(20, 20, 20);
     --card-color: rgb(23, 23, 23);
 }
@@ -19,7 +19,7 @@ body {
     flex-wrap: wrap;
     max-width: 922px;
     width: calc(100% - 20px);
-    gap: 8px
+    gap: 8px;
 }
 
 #cards:hover > .card > .card-border {

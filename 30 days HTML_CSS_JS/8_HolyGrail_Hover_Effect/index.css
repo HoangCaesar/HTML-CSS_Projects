@@ -1,0 +1,109 @@
+:root {
+    --border: rgb(3, 169, 244);
+
+    --g1: rgb(98, 0, 234);
+    --g2: rgb(236, 64, 122);
+    --g3: rgb(253, 216, 53);
+}
+
+body {
+    display: grid;
+    place-items: center;
+
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-color: rgb(10,10,10);
+}
+
+.card {
+    position: relative;
+
+    width: 56vmin;
+    aspect-ratio: 1 / 1.6;
+    border: 0.5vmin solid var(--border);
+    cursor: pointer;
+}
+
+.card::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+
+    height: 100%;
+    width: 100%;
+
+    background: linear-gradient(
+        130deg,
+        transparent 0% 33%,
+        var(--g1) 66%,
+        var(--g2) 83.5%,
+        var(--g3) 100%
+    );
+    background-position: 0% 0%;
+    background-size: 300% 300%;
+    z-index: 1;
+
+    transition: background-position 0.35s ease;
+}
+
+.card:hover::before {
+    background-position: 100% 100%;
+    transform: scale(1.08, 1.03);
+}
+
+.card-content {
+    position: relative;
+    padding: 5vmin;
+    height: calc(100% - 10vmin);
+    width: calc(100% - 10vmin);
+
+    background: radial-gradient(
+        rgba(255, 255, 255, 0.2) 8%,
+        transparent 8%
+    );
+    background-position: 0% 0%;
+    background-size: 5vmin 5vmin;
+    z-index: 2;
+
+    transition: background-position 0.35s ease;
+}
+
+.card:hover > .card-content {
+    background-position: -10% 0%;
+}
+
+.card-title,
+.card-subtitle {
+    margin: 0px;
+    font-weight: 400;
+    color: white;
+    font-family: "Anek Latin", sans-serif;
+}
+
+.card-title {
+    font-size: 6vmin;
+}
+
+.card-subtitle {
+    margin-top: 2vmin;
+    font-size: 3vmin;
+}
+
+.card-subtitle-word {
+    position: relative;
+
+    display: inline-block;
+    margin: 0 0.3vmin;
+    opacity: 0;
+
+    transform: translateY(40%);
+    transition: none;
+}
+
+.card:hover > .card-content > .card-subtitle > .card-subtitle-word {
+    opacity: 1;
+    transform: translateY(0%);
+    transition:  opacity 0s, transform 0.2s cubic-bezier(.90, .06, .15, .90);
+}

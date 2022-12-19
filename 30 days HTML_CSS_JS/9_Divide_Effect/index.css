@@ -1,0 +1,64 @@
+:root {
+    --dark: rgb(20, 20, 20);
+    --yellow: rgb(253, 216, 53);
+    --blue: rgb(98, 0, 234);
+
+    --c1: rgb(38, 70, 83);
+    --c2: rgb(42, 157, 143);
+
+    --left-color: var(--c1);
+    --right-color: var(--c2);
+}
+
+body {
+    margin: 0;
+    background-color: var(--dark);
+}
+
+.side {
+    position: absolute;
+    overflow: hidden;
+
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    width: 100%;
+}
+
+.side .title {
+    margin: 0px 10vw;
+    width: 80vw;
+    font-size: 8vw;
+    font-family: "Rubik", sans-serif;
+}
+
+.side .fancy {
+    font-size: 1.3em;
+    line-height: 0.8em;
+    font-family: "Lobster", cursive;
+}
+
+#left-side {
+    background-color: var(--left-color);
+    z-index: 2;
+}
+
+#left-side .title {
+    color: white;
+}
+
+#left-side .fancy {
+    color: var(--right-color);
+}
+
+#right-side {
+    background-color: var(--right-color);
+}
+
+#right-side .title {
+    color: var(--dark);
+}
+
+#right-side .fancy {
+    color: white;
+}

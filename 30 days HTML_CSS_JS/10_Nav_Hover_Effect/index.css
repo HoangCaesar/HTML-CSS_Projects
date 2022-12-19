@@ -1,0 +1,56 @@
+:root {
+    --dark-color: rgb(20, 20, 20);
+    --blue: rgb(61, 90, 254);
+    --light-blue: rgb(33, 150, 243);
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-color: var(--dark-color);
+}
+
+.link {
+    position: relative;
+    display: block;
+    padding: clamp(0.25em, 1vw, 1em) clamp(1em, 4vw, 4em);
+    font-size: clamp(2em, 8vw, 7em);
+    color: white;
+    font-family: "Permanent Marker", cursive;
+    text-decoration: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.link:nth-child(3) {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.link:hover {
+    color: var(--blue);
+}
+
+.link::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0%;
+
+    background: linear-gradient(
+        to right,
+        transparent,
+        var(--blue) var(--light-blue-percent),
+        var(--light-blue)
+      );
+    transition: width 0.6s ease;
+}
+
+.link:hover::before {
+    width: 100%;
+}
+
